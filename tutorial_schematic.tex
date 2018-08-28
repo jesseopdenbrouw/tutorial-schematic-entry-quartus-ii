@@ -10,7 +10,7 @@
 %% v1.4,  4-sep-2015 - changed item 4 in list ...
 %% v1.5, 13-aug-2016 - changed logo to pdf version
 %%                     first commit to BitBucket.
-%%
+%% v1.6, 28-aug-2018 - changed to v13.0sp1 & v10.1d
 
 \documentclass[a4paper,12pt,fleqn,twoside]{book}
 \usepackage[utf8]{inputenc}
@@ -24,7 +24,7 @@
 
 %% User's stuff
 \def\tutauthor{J.E.J. op den Brouw}
-\def\tuttitle{Tutorial Schematic Entry met\\ Quartus 11.1\\ en\\ ModelSim-Altera 10.0}
+\def\tuttitle{Tutorial Schematic Entry met\\ Quartus 13.0sp1\\ en\\ ModelSim-Altera 10.1d}
 \def\tutpicscale{0.455}
 \def\tutvak{INLDIG}
 \def\tutkortnaam{Tutorial Quartus Schematic Entry}
@@ -90,6 +90,7 @@
 %\renewcommand{\familydefault}{\sfdefault}
 %% Sort of Times New Roman
 \usepackage{mathptmx}
+%\usepackage[scaled=.98,sups,osf]{XCharter}% lining figures in math, osf in text
 \usepackage{textcomp} 
 
 %% Set paragraph skips et al.
@@ -468,21 +469,22 @@ worden op
 De software draait op Windows\texttrademark\ \'{e}n Linux\texttrademark\ , er
 is geen OS X-versie. Op het practicum wordt Windows gebruikt.
 
-Let erop dat het practicum wordt uitgevoerd met versie 11.1sp1 resp\@. versie
-10.0c.
+Let erop dat het practicum wordt uitgevoerd met versie 13.0sp1 resp\@. versie
+10.1d.
 
 Noot: aangeraden wordt om versie 13.0sp1 te installeren. Hogere versies
 ondersteunen de FPGA's (Cyclone II en III) op de gebruikte ontwikkelbordjes
-niet. Versie 13.0sp1 is prima geschikt om deze tutorial te doorlopen. Let er
-op dat de pictogrammen kunnen afwijken t.o.v.\@ versie 11.1sp1. De in
-het practicum gemaakte Quartus-projecten
-kunnen zonder problemen door zowel versie 13.0sp1 als 11.1sp1 geopend worden.
-Vanaf versie 13.0 is ModelSim ge\"{\i}ntegreerd in het installatiepakket.
+niet. Versie 13.0sp1 is prima geschikt om deze tutorial te doorlopen.
+% Let er
+%op dat de pictogrammen kunnen afwijken t.o.v.\@ versie 11.1sp1. De in
+%het practicum gemaakte Quartus-projecten
+%kunnen zonder problemen door zowel versie 13.0sp1 als 11.1sp1 geopend worden.
+%Vanaf versie 13.0 is ModelSim ge\"{\i}ntegreerd in het installatiepakket.
 
-%\textbf{
-%Let op: versie 14.0 en hoger kunnen niet gebruikt worden i.s.m.\@ het
-%DE0-bordje!
-%}
+\textbf{
+Let op: versie 14.0 en hoger kunnen niet gebruikt worden i.s.m.\@ het
+DE0-bordje!
+}
 
 
 
@@ -802,8 +804,7 @@ Niet op een .bdf-bestand dubbelklikken, want dan is er geen projectomgeving\\
 beschikbaar en kan er niet gesimuleerd of gesynthetiseerd worden.\\[1ex]
 Gebruik geen spaties, leestekens of ``vreemde'' tekens in bestandsnamen en
 mapnamen!\\[1ex]
-Gebruik geen minteken in bestandsnamen, underscores zijn wel toegestaan. 
-}
+Gebruik geen minteken in bestandsnamen, underscores zijn wel toegestaan.}
 
 
 \section{Project Tutorial starten}
@@ -1436,11 +1437,13 @@ Ga als volgt te werk:
 \item Open in de Project manager het menu \menu{Tools\pijl{}Options}
 \item In het venster dat geopend wordt kies je \menu{EDA Tool Options}
 \item Aan de rechterkant kan je in het veld \naam{ModelSim-Altera} het pad opgeven.
-\item Voor de PC's op school is dat \lstinline|C:\altera\11.1\modelsim_ae\win32aloem|
+\item Voor de PC's op school is dat \lstinline|C:\altera\13.0sp1\modelsim_ase\win32aloem|
 \end{itemize}
 
-Op je eigen PC hangt dat af van het installatie-pad. Bij gebruik van de Web
-Edition moet je \naam{modelsim\_ae} vervangen voor \naam{modelsim\_ase}. Zie
+Op je eigen PC hangt dat af van het installatie-pad.
+% Bij gebruik van de Web
+%Edition moet je \naam{modelsim\_ae} vervangen voor \naam{modelsim\_ase}.
+ Zie
 figuur~\ref{fig:212modelsimpath2}.
 
 Tip: bij gebruik van Quartus v13.1 moet je een \lstinline|\| (``backslash'')
@@ -1489,7 +1492,7 @@ bekende problemen:
 \begin{itemize}\itemsep-1pt
 \item Bij het aanmaken van een nieuw project is als projectmap een map gekozen
       waar je als gebruiker geen schrijfrechten voor hebt. Een mooi voorbeeld
-      is de map \lstinline|C:\altera\11.1|, de installatiemap van Quartus.
+      is de map \lstinline|C:\altera\13.0sp1|, de installatiemap van Quartus.
       Deze map wordt standaard opgegeven bij het aanmaken van een nieuw
       project. De oplossing is uiteraard eenvoudig: selecteer een andere map.
 \item De bestanden van het project staan opgeslagen op de H:-schijf. Soms is
@@ -1573,7 +1576,7 @@ SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="09fb", ATTRS{idP
 %krijgt, heb je waarschijnlijk een asynchrone \'{e}n synchrone reset in je
 %ontwerp gebruikt. Zoek alle deelontwerpen af naar deze twee vormen en verander
 %alle synchrone resets in asynchrone resets. Zie
-%\url{http://quartushelp.altera.com/13.0/mergedProjects/verify/da/comp_file_rules_synch_reset.htm}
+%\url{http://quartushelp.altera.com/13.0sp1/mergedProjects/verify/da/comp_file_rules_synch_reset.htm}
 %en klik op de \textsl{buttons} om de schema's te openen.
 
 
