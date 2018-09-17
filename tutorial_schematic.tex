@@ -11,6 +11,8 @@
 %% v1.5, 13-aug-2016 - changed logo to pdf version
 %%                     first commit to BitBucket.
 %% v1.6, 28-aug-2018 - changed to v13.0sp1 & v10.1d
+%% v1.7, 17-sep-2018 - new screenshot install_flow.vbs et al
+%%
 
 \documentclass[a4paper,12pt,fleqn,twoside]{book}
 \usepackage[utf8]{inputenc}
@@ -130,7 +132,7 @@
 \titlespacing*{\section}{0pt}{1.44\baselineskip}{0.255\baselineskip}
 %\titlespacing*{\subsection}{0pt}{12pt}{1pt}
 \titlespacing*{\subsection}{0pt}{\baselineskip}{0.851\baselineskip}
-\titlespacing*{\subsubsection}{0pt}{\parskip}{-\parskip}
+\titlespacing*{\subsubsection}{0pt}{0.5\baselineskip}{0\baselineskip}
 %\titlespacing*{\subsubsection}{0pt}{\baselineskip}{-\baselineskip}
 %%%\titlespacing*{\section}{0pt}{1.2\baselineskip}{.4\baselineskip}
 %%%\titlespacing*{\subsection}{0pt}{.8\baselineskip}{.2\baselineskip}
@@ -712,6 +714,7 @@ de schakeling die wordt ingevoerd (wat doet het) wordt geen uitleg gegeven.
 
 
 \section{Installatie project Tutorial}
+\label{sec:installatie}
 %% --> add footnote
 \label{sec:installatieprojecttutorial}
 Voordat we echt kunnen beginnen, moeten we eerst de projectomgeving inrichten.
@@ -735,21 +738,37 @@ kunnen ook gevonden worden op \url{http://ds.opdenbrouw.nl/inldig.html}.
       de bedoeling!
 \item Je vindt nu twee mappen: \lstinline|tutorial| en \lstinline|common|.
       Navigeer naar de map \lstinline|common|. Hierin vindt je een bestand met
-      de naam \lstinline|install_flow.cmd|. Zie figuur \ref{fig:008commonmap}.
+      de naam \lstinline|install_flow.vbs|. Zie figuur \ref{fig:008commonmap}.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=\tutpicscale]{008commonmap}
 \caption{De inhoud van de map \lstinline|common|.}
 \label{fig:008commonmap}
 \end{figure}
-\item Dubbelklik op het bestand \lstinline|install_flow.cmd|. Er wordt een
-      scherm gestart met als uitvoer 
-\begin{lstlisting}[numbers=none,belowskip=-3.5ex]
-Installing INLDIG Flow... 
- 1 file(s) copied. 
- 1 file(s) copied. 
-Press any key to continue . . . 
-\end{lstlisting}
+\item Dubbelklik op het bestand \lstinline|install_flow.vbs|. Er volgt nu een scherm.
+Zie figuur~\ref{fig:009readyinstallflow}.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=\tutpicscale]{009readyinstallflow}
+\caption{Installeren flow.}
+\label{fig:009readyinstallflow}
+\end{figure}
+De flow wordt nu ge\"installeerd. Hierna volgt een melding. Zie figuur~\ref{fig:009ZZflowinstalled}.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=\tutpicscale]{009ZZflowinstalled}
+\caption{De flow is ge\"installeerd.}
+\label{fig:009ZZflowinstalled}
+\end{figure}
+
+%% Er wordt een
+%%      scherm gestart met als uitvoer 
+%%\begin{lstlisting}[numbers=none,belowskip=-3.5ex]
+%%Installing INLDIG Flow... 
+%% 1 file(s) copied. 
+%% 1 file(s) copied. 
+%%Press any key to continue . . . 
+%%\end{lstlisting}
 \item Druk op een toets om het scherm te sluiten. Noot: als je iets anders
 ziet dan hierboven, raadpleeg de docent. 
 \end{enumerate}
@@ -806,7 +825,7 @@ Gebruik geen spaties, leestekens of ``vreemde'' tekens in bestandsnamen en
 mapnamen!\\[1ex]
 Gebruik geen minteken in bestandsnamen, underscores zijn wel toegestaan.}
 
-
+\newpage
 \section{Project Tutorial starten}
 \label{sec:projecttutorialstarten}
 We starten Quartus op via Explorer. Navigeer naar
@@ -1501,6 +1520,13 @@ bekende problemen:
       reageert Quartus weer.
 \end{itemize}
 
+Het is ook mogelijk dat de synthesestap blijft hangen, meestal rond de 10\%.
+Dit kan te maken hebben met spaties in een padnaam, maar dat is niet altijd
+het geval. De oplossing is om de hele projectmap naar de C-schijf te kopi\"eren
+en wel naar \lstinline|C:\TEMP|. Dan werkt de synthesestap (en de andere stappen)
+wel. Vergeet niet voor het uitloggen het project terug te kopi\"eren naar de
+H:-schijf.
+
 \fi
 
 
@@ -1619,44 +1645,46 @@ en \lstinline|simulation| kan je gewoon verwijderen. Let erop dat je geen
 eigen aangemaakte bestanden in de map \lstinline|simulation| moet hebben staan.
 
 Onderstaand script kan je draaien in een Windows-command box en verwijdert
-bijna elk bestand dat niet nodig is (de bovengenoemde mappen met inhoud
-moet je eerst zelf verwijderen).
+bijna elk bestand dat niet nodig is.
 
-\begin{lstlisting}[caption=Windows opruimscript,label=cod:opruim]
-@echo off
-rem
-rem
-echo.
-echo This program will delete all unnessecary files from Quartus projects.
-echo.
-echo Please be VERY carefull! Press Ctrl-C to break.
-echo.
-pause
-echo.
+\medskip
+\lstinputlisting[caption=Windows opruimscript,label=cod:opruim]{remove_unwanted_files.cmd}
 
-del /s *.done
-del /s *.rpt
-del /s *.sof
-del /s *.pof
-del /s *.summary
-del /s *.jdi
-del /s vsim.wlf
-del /s *.bak
-del /s transcript
-del /s *assignment_defaults.qdf
-del /s *.pin
-del /s modelsim.ini
-del /s *.qws
-del /s *.smsg
-del /s *.map
-del /s *.cdf
-del /s *.dpf
-
-echo.
-echo Done.
-echo.
-pause
-\end{lstlisting}
+%%\begin{lstlisting}[caption=Windows opruimscript,label=cod:opruim]
+%%@echo off
+%%rem
+%%rem
+%%echo.
+%%echo This program will delete all unnessecary files from Quartus projects.
+%%echo.
+%%echo Please be VERY carefull! Press Ctrl-C to break.
+%%echo.
+%%pause
+%%echo.
+%%
+%%del /s *.done
+%%del /s *.rpt
+%%del /s *.sof
+%%del /s *.pof
+%%del /s *.summary
+%%del /s *.jdi
+%%del /s vsim.wlf
+%%del /s *.bak
+%%del /s transcript
+%%del /s *assignment_defaults.qdf
+%%del /s *.pin
+%%del /s modelsim.ini
+%%del /s *.qws
+%%del /s *.smsg
+%%del /s *.map
+%%del /s *.cdf
+%%del /s *.dpf
+%%
+%%echo.
+%%echo Done.
+%%echo.
+%%pause
+%%\end{lstlisting}
 
 %\section{Pinnen worden niet getoond in de Pin Planner}
 %Als de pinnen niet worden getoond in de Pin Planner, heb je waarschijnlijk
@@ -1900,8 +1928,13 @@ verrichten:
 \item Pak het bestand uit in een map, bijvoorbeeld
       \lstinline|D:\QUARTUS\INLDIG\|. Je krijgt dan twee mappen genaamd
       \lstinline|common| en \lstinline|tutorial|
+\item Navigeer naar de map \lstinline|common| en dubbelklik op het bestand
+      \lstinline|install_flow.vbs|. Volg de aanwijzingen op het scherm. Zie
+      ook paragraaf~\ref{sec:installatie}.
 \end{itemize}
-      
+
+Mocht het niet lukken om de flow automatisch te installeren, dan kan je de
+flow ook handmatig installeren.
 De flow is opgeslagen onder de naam
 \lstinline|tmwc_INLDIG_Compile_And_Simulation.tmf| in de map \lstinline|common|
 en moet ge\"{\i}nstalleerd worden in de \textsl{profile map} van de gebruiker,
@@ -1912,7 +1945,6 @@ Om nu de flow onder Windows te gebruiken moet je de padnaam in het bovengenoemde
 bestand wijzigen in de juiste locatie.
 \textbf{Let op: geen spaties in de padnaam!}
 
-\bigskip
 \begin{lstlisting}[numbers=none]
 ... beginstuk weggelaten ...
 
