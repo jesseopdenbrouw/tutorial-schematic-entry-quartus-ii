@@ -12,6 +12,7 @@
 %%                     first commit to BitBucket.
 %% v1.6, 28-aug-2018 - changed to v13.0sp1 & v10.1d
 %% v1.7, 17-sep-2018 - new screenshot install_flow.vbs et al
+%% v1.8, 18-aug-2019 - typos and links with https
 %%
 
 \documentclass[a4paper,12pt,fleqn,twoside]{book}
@@ -186,7 +187,7 @@
     {\fontfamily{phv}\fontsize{35pt}{60pt}\selectfont\bfseries\scshape \@title\par}%
     \vskip 8.0cm
     \begin{minipage}[c]{.50\linewidth}
-       \includegraphics[width=\linewidth]{HHS_grijs_groen_fc}
+       \includegraphics[width=\linewidth]{HHS_NL_grijs_FC}
     \end{minipage}\hfill
     \begin{minipage}[c]{0.40\linewidth}
        {\hfill \large \@author\par}%
@@ -400,7 +401,7 @@ is een FPGA van Altera geplaatst. Hieronder is een foto weergegeven.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.63]{image-de0.jpg}
-\caption{Het DE0-ontwikkelbord}
+\caption{Het DE0-ontwikkelbord.}
 \label{fig:image-de0}
 \end{figure}
  
@@ -423,9 +424,9 @@ schakelingen en het configureren van (Altera) componenten. Het bestaat uit een
 viertal delen:
 
 \begin{itemize}\itemsep-1pt
-\item het invoergedeelte - d.m.v. schema's, VHDL, toestandsdiagrammen
-\item synthesizer - dit deel vertaalt de invoer naar een netlist,
-\item implemention - genereert een bit-file die je in de component kunt laden,
+\item het invoergedeelte - d.m.v.\@ schema's, VHDL, toestandsdiagrammen;
+\item synthesizer - dit deel vertaalt de invoer naar een netlist;
+\item implemention - genereert een bit-file die je in de component kunt laden;
 \item programmer - dit deel configureert de component via de USB-interface.
 \end{itemize}
 
@@ -462,16 +463,16 @@ De Web Edition van Quartus (met ModelSim ge\"{\i}ntegreerd) kan gevonden
 worden op
 
 %\hspace*{1cm}\url{https://www.altera.com/download/software/quartus-ii-we}
-\hspace*{1cm}\url{http://dl.altera.com/13.0sp1/?edition=web#tabs-1}
+\hspace*{1cm}\url{https://dl.altera.com/13.0sp1/?edition=web#tabs-1}
 
 %De Starter Edition van ModelSim kan gevonden worden op
 %
 %\hspace*{1cm}\url{https://www.altera.com/download/software/modelsim-starter}
 
-De software draait op Windows\texttrademark\ \'{e}n Linux\texttrademark\ , er
+De software draait op Windows\texttrademark\ \'{e}n Linux\texttrademark, er
 is geen OS X-versie. Op het practicum wordt Windows gebruikt.
 
-Let erop dat het practicum wordt uitgevoerd met versie 13.0sp1 resp\@. versie
+Let erop dat het practicum wordt uitgevoerd met versie 13.0sp1 resp.\@ versie
 10.1d.
 
 Noot: aangeraden wordt om versie 13.0sp1 te installeren. Hogere versies
@@ -511,7 +512,7 @@ onderdelen.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.92]{DE0_layout_yellow_1000.jpg}
-\caption{Het DE0-ontwikkelbord met benoeming van periferie}
+\caption{Het DE0-ontwikkelbord met benoeming van periferie.}
 \label{fig:DE0-layout-yellow-1000}
 \end{figure}
 
@@ -522,7 +523,7 @@ Cyclone III. De voedingslijnen zijn niet meegenomen.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.50]{010blockdiagram.pdf}
-\caption{Blokschema ontwikkelbord}
+\caption{Blokschema ontwikkelbord.}
 \label{fig:010blockdiagram}
 \end{figure}
 
@@ -534,14 +535,14 @@ digitale schakeling kan worden geplaatst.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.40]{ep3c16f484c6n.jpg}
-\caption{Foto Cyclone III}
+\caption{Foto Cyclone III.}
 \label{fig:ep3c16f484c6n}
 \end{figure}
 %Figuur 3-3  -  foto EP3C16F484C-6N
 
 \subsubsection{Push buttons}
 Het ontwikkelbord heeft drie drukknoppen genaamd \naam{BUTTON2} t/m
-\naam{BUTTON0}. Deze drukken geven een laag logisch
+\naam{BUTTON0}. Deze drukknoppen geven een laag logisch
 niveau (0) af als de knop is ingedrukt en een hoog logisch niveau (1) als de
 knop niet is ingedrukt. Verder zijn deze drie knoppen ontdenderd en zijn te
 gebruiken als kloksignaal.
@@ -559,8 +560,8 @@ Het ontwikkelbord heeft tien groene leds \naam{LEDG9} t/m \naam{LEDG0}. Een
 led brandt als een hoog logisch niveau (1) wordt aangeboden en is uit als een
 laag logisch niveau (0) wordt aangeboden.
 
-\subsubsection{7-segment displays}
-Het ontwikkelbord heeft vier 7-segment displays waarmee getallen van
+\subsubsection{7-segmenten displays}
+Het ontwikkelbord heeft vier 7-segmenten displays waarmee getallen van
 verschillend formaat kunnen worden gemaakt. Elk display bestaat uit zeven leds
 waarmee een cijfer kan worden gevormd. Daarnaast heeft elk display een punt.
 Een led brandt als een laag logisch niveau (0) wordt aangeboden en is uit als
@@ -593,7 +594,7 @@ elementen. Je kan er dus acht processoren in kwijt.
 
 In tabel~\ref{tab:gegevenscyclone} zijn wat gegevens te vinden.
 \begin{table}[H]
-\caption{Enige gegevens over de EP3C16F484C-6N}
+\caption{Enige gegevens over de EP3C16F484C-6N.}
 \label{tab:gegevenscyclone}
 \centering
 \begin{tabular}{|l|l|}
@@ -637,7 +638,7 @@ Je kan ze bijvoorbeeld gebruiken bij digitale signaalbewerking.
 \put(125,77.5){\makebox(0,0)[l]{\scriptsize 112 embedded multipliers}}
 \put(125,110.7){\makebox(0,0)[l]{\scriptsize LV-TTL \& CMOS / Tri-state}}
 \end{overpic}
-\caption{Floor Plan van de Cyclone III}
+\caption{Floor Plan van de Cyclone III.}
 \label{fig:003chip}
 \end{figure}
 
@@ -706,7 +707,7 @@ een aantal knoppen en sneltoetscombinaties. Niet alle knoppen worden in deze
 tutorial gebruikt.
 
 \fpf{NB: gebruik geen spaties, leestekens of "vreemde" tekens in mapnamen en
-bestandsnamen! Bestandsnamen niet met een cijfer beginnen!}
+bestandsnamen! Bestandsnamen altijd beginnen met een letter!}
 
 Noot: het doel van deze tutorial is het leren omgaan met de software
 (zogenaamde tools), niet het leren van digitale techniek. Over de werking van
@@ -719,18 +720,18 @@ de schakeling die wordt ingevoerd (wat doet het) wordt geen uitleg gegeven.
 \label{sec:installatieprojecttutorial}
 Voordat we echt kunnen beginnen, moeten we eerst de projectomgeving inrichten.
 Hiervoor moet je toegang hebben tot de BlackBoard Course INLDIG. De bestanden
-kunnen ook gevonden worden op \url{http://ds.opdenbrouw.nl/inldig.html}.
+kunnen ook gevonden worden op \url{https://ds.opdenbrouw.nl/inldig.html}.
 
 \begin{enumerate}\itemsep-1pt
 \item Maak op de H:-schijf direct onder de \textsl{root}%
-      \footnote{Zie \url{http://en.wikipedia.org/wiki/Root_directory}} een map
+      \footnote{Zie \url{https://en.wikipedia.org/wiki/Root_directory}} een map
       aan met de naam \lstinline|QUARTUS|. Je hebt dan een pad
       \lstinline|H:\QUARTUS|.
 \item Maak in het pad \lstinline|H:\QUARTUS| een map aan met de naam
       \lstinline|INLDIG|. Je hebt nu een pad met de naam
       \lstinline|H:\QUARTUS\INLDIG|.
 \item Download van BlackBoard\footnote{Een alternatief is
-      \url{http://ds.opdenbrouw.nl/inldig/inldig_common_tutorial.zip}} het
+      \url{https://ds.opdenbrouw.nl/inldig/inldig_common_tutorial.zip}} het
       bestand \lstinline|inldig_common_tutorial.zip| en plaats dit bestand in
       \lstinline|H:\QUARTUS\INLDIG|. 
 \item Pak het bestand uit in deze map. Let op: bij uitpakken maakt Windows
@@ -757,7 +758,7 @@ De flow wordt nu ge\"installeerd. Hierna volgt een melding. Zie figuur~\ref{fig:
 \begin{figure}[H]
 \centering
 \includegraphics[scale=\tutpicscale]{009ZZflowinstalled}
-\caption{De flow is ge\"installeerd.}
+\caption{De flow is ge\"{\i}nstalleerd.}
 \label{fig:009ZZflowinstalled}
 \end{figure}
 
@@ -1064,7 +1065,7 @@ voorgesteld, wijzig dit in \naam{inhibit.bdf}. Let op het vinkje bij
 %\includegraphics[scale=\tutpicscale]{030savefileas}
 \begin{overpic}[scale=\tutpicscale,unit=1mm]{030savefileas}
 \linethickness{1pt}
-\color{red}\put(32.5,12.3){\oval(20,5)}
+\color{red}\put(35.5,12.5){\oval(20,5)}
 \end{overpic}
 \caption{Opgeven bestandsnaam BDF-bestand.}
 \label{fig:030savefileas}
@@ -1872,7 +1873,7 @@ verrichten:
       ModelSim automatisch mee-ge\"{\i}nstalleerd.} onder de Altera-root
       (met versienummer), meestal iets van \lstinline|/opt/bin/altera/13.0sp1/| 
 \item Download het bestand \lstinline|inldig_common_tutorial.zip |van
-      BlackBoard of de website\\ \url{http://ds.opdenbrouw.nl/quartus/} 
+      BlackBoard of de website\\ \url{https://ds.opdenbrouw.nl/quartus/} 
 \item Pak het bestand uit in een map, bijvoorbeeld
       \naam{/home/\textsl{username}/QUARTUS/INLDIG}. Je krijgt dan twee
       mappen genaamd \naam{common} en \naam{tutorial}
@@ -1924,7 +1925,7 @@ verrichten:
       ModelSim automatisch mee-ge\"{\i}nstalleerd.} onder de Altera-root
       (met versienummer), meestal iets van \lstinline|c:\altera\13.0sp1\| 
 \item Download het bestand \lstinline|inldig_common_tutorial.zip |van
-      BlackBoard of de website\\ \url{http://ds.opdenbrouw.nl/quartus/}. 
+      BlackBoard of de website\\ \url{https://ds.opdenbrouw.nl/quartus/}. 
 \item Pak het bestand uit in een map, bijvoorbeeld
       \lstinline|D:\QUARTUS\INLDIG\|. Je krijgt dan twee mappen genaamd
       \lstinline|common| en \lstinline|tutorial|
