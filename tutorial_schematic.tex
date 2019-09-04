@@ -13,6 +13,7 @@
 %% v1.6, 28-aug-2018 - changed to v13.0sp1 & v10.1d
 %% v1.7, 17-sep-2018 - new screenshot install_flow.vbs et al
 %% v1.8, 18-aug-2019 - typos and links with https
+%% v1.9.  4-sep-2019 - typos and installation on own laptop
 %%
 
 \documentclass[a4paper,12pt,fleqn,twoside]{book}
@@ -62,7 +63,7 @@
 
 %% Set page layout
 %\usepackage[a4paper,bindingoffset=0.2in,left=.7in,right=0.7in,top=1in,
-\usepackage[a4paper,bindingoffset=0.2in,left=0.8in,right=0.8in,top=1in,
+\usepackage[a4paper,bindingoffset=0.2in,outer=0.8in,inner=0.8in,top=1in,
 %            bottom=1.1in,footskip=.40in,showframe]{geometry}
             bottom=1.1in,footskip=.40in]{geometry}
 
@@ -141,7 +142,7 @@
 
 
 %% Making captions nicer...
-\usepackage[font=footnotesize,format=plain,labelfont=bf,up,textfont=sl,up]{caption}
+\usepackage[font=footnotesize,format=plain,labelfont=bf,textfont=sl]{caption}
 \captionsetup[table]{justification=raggedright,skip=0.1\baselineskip}
 %\captionsetup[figure]{belowskip=-6pt}
 \captionsetup[figure]{belowskip=-0.5\baselineskip}
@@ -691,11 +692,11 @@ onderzoeken die je voor de opdrachten nodig hebt.
 We zullen de volgende stappen doorlopen: 
 
 \begin{itemize}\itemsep-1pt
-\item project openen
-\item schema-invoer d.m.v. Schematic Editor.
+\item project openen;
+\item schema-invoer d.m.v. Schematic Editor;
 \item simuleren van de schakeling op functioneel niveau 
 \item compilatie (synthese en implementatie) van de poortschakeling naar een
-      configuratiebestand
+      configuratiebestand;
 \item downloaden van de configuratiebestand in de Cyclone III.
 \end{itemize}
 
@@ -721,6 +722,8 @@ de schakeling die wordt ingevoerd (wat doet het) wordt geen uitleg gegeven.
 Voordat we echt kunnen beginnen, moeten we eerst de projectomgeving inrichten.
 Hiervoor moet je toegang hebben tot de BlackBoard Course INLDIG. De bestanden
 kunnen ook gevonden worden op \url{https://ds.opdenbrouw.nl/inldig.html}.
+
+\subsubsection*{Bij gebruik van de schoolcomputers}
 
 \begin{enumerate}\itemsep-1pt
 \item Maak op de H:-schijf direct onder de \textsl{root}%
@@ -776,6 +779,26 @@ ziet dan hierboven, raadpleeg de docent.
 
 De flow is nu ge\"{\i}nstalleerd. We kunnen beginnen met invoeren van
 de schakeling.
+
+\subsubsection*{Bij gebruik van eigen laptop}
+\begin{enumerate}\itemsep-1pt
+\item Maak op je laptop een nieuwe map met de naam \lstinline{QUARTUS} aan. Dat kan op de C:-schijf in de map \lstinline|Documents|.
+\item Maak in de map \lstinline|QUARTUS| een map aan met de naam \lstinline|INLDIG|.
+\item Download van BlackBoard\footnote{Een alternatief is
+      \url{https://ds.opdenbrouw.nl/inldig/inldig_common_tutorial.zip}} het
+      bestand \lstinline|inldig_common_tutorial.zip| en plaats dit bestand in
+      de map \lstinline|INLDIG|. 
+\item Pak het bestand uit in deze map. Let op: bij uitpakken maakt Windows
+      automatisch de map \lstinline|inldig_common_tutorial| aan! Dat is niet
+      de bedoeling!
+\item Je vindt nu twee mappen: \lstinline|tutorial| en \lstinline|common|.
+      Navigeer naar de map \lstinline|common|. Hierin vindt je een bestand met
+      de naam \lstinline|install_flow.vbs|. Zie figuur \ref{fig:008commonmap}.
+\item Dubbelklik op het bestand \lstinline|install_flow.vbs|. Er volgt nu een scherm.
+	  Zie figuur~\ref{fig:009readyinstallflow}. Klik op \knop{OK} om de flow te installeren.
+\item De flow wordt nu ge\"installeerd. Hierna volgt een melding. Klik op \knop{OK} om de installatie af te sluiten.
+Zie figuur~\ref{fig:009ZZflowinstalled}.
+\end{enumerate}
  
 Noot: het is ook mogelijk om de bestanden handmatig in een andere map te
 installeren, zie de bijlagen~\ref{chap:inldigflowonderlinux} en
@@ -817,6 +840,11 @@ Quartus maakt in het simulatie- en synthesetraject nog veel meer bestanden met
 extensies aan, die zijn niet van belang. ModelSim-testbenches beginnen met
 \lstinline|tb_|.
 
+\newpage
+\hspace*{0pt}
+
+\vfill
+
 \fpf{%
 Een project kan automatisch in Quartus worden geopend door de dubbelklikken
 op het betreffende .qpf-bestand.\\[1ex]
@@ -825,6 +853,8 @@ beschikbaar en kan er niet gesimuleerd of gesynthetiseerd worden.\\[1ex]
 Gebruik geen spaties, leestekens of ``vreemde'' tekens in bestandsnamen en
 mapnamen!\\[1ex]
 Gebruik geen minteken in bestandsnamen, underscores zijn wel toegestaan.}
+
+\vfill
 
 \newpage
 \section{Project Tutorial starten}
@@ -965,10 +995,12 @@ Zie figuur~\ref{fig:022symbolselection}.
 Linksboven staan de \textsl{libraries} (bibliotheken) vermeld. Hierin zijn de
 poorten opgenomen die we gaan gebruiken.
 
-Noot: als de de eerste regel in figuur~\ref{fig:022symbolselection} niet
-ziet, dan heb je bij het installeren van de projectomgeving niet de
-juiste mappenstructuur aangemaakt. Zorg ervoor dat de mappen \naam{common}
-en \naam{tutorial} in de map \lstinline|H:\QUARTUS\INLDIG\| geplaatst zijn.
+Noot: het kan zijn dat de eerste regel in figuur~\ref{fig:022symbolselection}
+niet getoond wordt. Dat is in de regel geen probleem.
+%Noot: als je de eerste regel in figuur~\ref{fig:022symbolselection} niet
+%ziet, dan heb je bij het installeren van de projectomgeving niet de
+%juiste mappenstructuur aangemaakt. Zorg ervoor dat de mappen \naam{common}
+%en \naam{tutorial} in de map \lstinline|H:\QUARTUS\INLDIG\| geplaatst zijn.
 
 Open nu de tweede library tot op het niveau van \naam{logic} en selecteer
 de AND2-poort. Zie figuur~\ref{fig:023withandport}.
